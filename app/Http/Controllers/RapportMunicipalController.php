@@ -8,6 +8,6 @@ class RapportMunicipalController extends Controller
 {
     public function index()
     {
-
+        return view('rapportMunicipal.index');
     }
 }

@@ -14,7 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/rapportPolitique', 'RapportPolitiqueController@index');
+Route::get('/rapportPolitique', 'RapportPolitiqueController@index')->name('RP');
+
+Route::get('/rapportMunicipal', 'RapportMunicipalController@index')->name('RM');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
