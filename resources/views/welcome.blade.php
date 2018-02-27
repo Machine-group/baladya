@@ -10,6 +10,9 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <link href="{{URL::asset('menu/styles.css')}}" rel="stylesheet" type="text/css"/>
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+
         <script src="{{URL::asset('menu/script.js')}}"></script>
         <!-- Styles -->
         <style>
@@ -71,38 +74,50 @@
         <ul>
             <li><a href='#'>Accueil</a></li>
             <li><a href='rapport_municipal.html'>Rapport municipal</a></li>
-            <li><a class='active' href='rapport_politique.html'>Rapport politique</a></li>
+            <li><a class='active' href='{{ route('login') }}'>Rapport politique</a></li>
             <li><a href='#'>Plan de mobilisaion</a></li>
             <li><a href='#'>Contact</a></li>
+            @if (Route::has('login'))
+                <div class="top-right links">
+                    @if (Auth::guest())
+                        <li><a href="{{ route('login') }}">Login</a></li>
+                        <li><a href="{{ route('register') }}">Register</a></li>
+                    @else
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    @endif
+                </div>
+            @endif
+
         </ul>
     </div>
 
 
     <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
-
             <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                @yield('content')
             </div>
         </div>
+    <!--            scripts              -->
+    <script src="{{ asset('js/app.js') }}"></script>
+
+
     </body>
 </html>
