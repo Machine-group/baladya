@@ -1,0 +1,19 @@
+.cm-menu-items ->li{
+    font-size: 20px;
+}
+.cm-navbar {
+    height: 60px;
+}
+
+#global {
+    position: static;
+    padding-top: 0px;
+}
+
+.container-fluid {
+   margin-left: 0px;
+}
+
+.cm-footer{
+    position: fixed;
+}

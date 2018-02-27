@@ -8,6 +8,6 @@ class RapportPolitiqueController extends Controller
 {
     public function index()
     {
-        return view('rapportPolitique.index');
+        return view('rapportPolitique.rapportPolitique');
     }
 }

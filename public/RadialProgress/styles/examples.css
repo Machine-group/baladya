@@ -1,0 +1,45 @@
+
+
+
+.tile {
+    font-family:Raleway;
+    font-weight:300;
+}
+
+.heading {
+    font-family:Raleway;
+    font-weight:300;
+}
+
+.title {
+    font-family: "Roboto";
+    font-size: 20px;
+    font-weight:200;
+}
+
+.vizuly {
+    font-family: "Raleway";
+    
+}
+
+svg {
+    border-radius: 4px;
+    shape-rendering: crispEdges;
+}
+
+.my-tip {
+    font-family:Raleway;
+    font-weight:300;
+    text-anchor:middle;
+}
+
+#viz_container
+{
+    width: auto;
+    height: 250px;
+    background-image: none !important ;
+}
+
+#contenu{
+    width="65%";
+}
