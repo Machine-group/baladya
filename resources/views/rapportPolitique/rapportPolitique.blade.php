@@ -1,17 +1,6 @@
 @extends('layouts.app')
 
-@section('head')
-
-    <head>
-        <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/bootstrap-clearmin.min.css')}}">
-        <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/roboto.css')}}">
-        <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/material-design.css')}}">
-        <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/small-n-flat.css')}}">
-        <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/font-awesome.min.css')}}">
-        <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/c3.min.css')}}">
-        <link rel="stylesheet" type="text/css" href="{{URL::asset('style/style.css')}}">
-
-
+@section('styles')
         <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Roboto|Raleway:600,400,200' rel='stylesheet' type='text/css'>
 
@@ -115,9 +104,6 @@
 
         <title>Baladya</title>
         <li id="currentDisplay" class="selected" style="display: none;"><a></a></li>
-
-    </head>
-
     @endsection
 
 
@@ -325,6 +311,12 @@
     </div>
 
 
+
+@endsection
+
+
+@section('customScripts')
+
     <script src="{{URL::asset('assets/js/jquery.mousewheel.min.js')}}"></script>
     <script src="{{URL::asset('assets/js/jquery.cookie.min.js')}}"></script>
     <script src="{{URL::asset('assets/js/fastclick.min.js')}}"></script>
@@ -411,6 +403,5 @@
 
         });
     </script>
-
 
 @endsection
