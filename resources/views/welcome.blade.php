@@ -9,7 +9,8 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
+        <link href="{{URL::asset('menu/styles.css')}}" rel="stylesheet" type="text/css"/>
+        <script src="{{URL::asset('menu/script.js')}}"></script>
         <!-- Styles -->
         <style>
             html, body {
@@ -65,7 +66,19 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+
+    <div id='cssmenu'>
+        <ul>
+            <li><a href='#'>Accueil</a></li>
+            <li><a href='rapport_municipal.html'>Rapport municipal</a></li>
+            <li><a class='active' href='rapport_politique.html'>Rapport politique</a></li>
+            <li><a href='#'>Plan de mobilisaion</a></li>
+            <li><a href='#'>Contact</a></li>
+        </ul>
+    </div>
+
+
+    <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @if (Auth::check())
