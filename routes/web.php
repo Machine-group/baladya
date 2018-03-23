@@ -13,8 +13,9 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('accueil');
 Route::get('/rapportPolitique', 'RapportPolitiqueController@index')->name('RP');
+Route::get('/rapportPolitique', 'RapportPolitiqueController@data')->name('RP');
 
 Route::get('/rapportMunicipal', 'RapportMunicipalController@index')->name('RM');
 

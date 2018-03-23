@@ -76,7 +76,7 @@
             }
           });
 
-          /*
+
           cssmenu.find(".has-sub").prepend('<span class="submenu-button"></span>');
           cssmenu.find('.submenu-button').on('click', function() {
             $(this).toggleClass('submenu-opened');
@@ -88,7 +88,7 @@
               $(this).siblings('ul').addClass('open').show();
             }
           });
-          */
+
         };
 
         if (settings.format === 'multitoggle') multiTg();

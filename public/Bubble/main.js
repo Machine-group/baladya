@@ -1,5 +1,7 @@
 $(document).ready(function () {
+
   var bubbleChart = new d3.svg.BubbleChart({
+
     supportResponsive: true,
     container: ".bubbleChart" ,
     size: 600,
@@ -13,7 +15,7 @@ $(document).ready(function () {
     //circleColor: use @default
     data: {
       items: [
-        {text: "Java", count: "236"},
+        {text: data.name, count: "236"},
         {text: ".Net", count: "382"},
         {text: "Php", count: "170"},
         {text: "Ruby", count: "123"},
