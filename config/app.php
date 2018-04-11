@@ -136,6 +136,7 @@ return [
     */
 
     'providers' => [
+        'App\Providers\DataServiceProvider',
 
         /*
          * Laravel Framework Service Providers...

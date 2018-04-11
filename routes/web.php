@@ -11,14 +11,30 @@
 |
 */
 
+Route::get('home', [
+    'middleware' => 'auth',
+    'uses' => 'HomeController@index'
+]);
+
 Route::get('/', function () {
     return view('welcome');
-})->name('accueil');
+});
+
+Auth::routes();
+
+
 Route::get('/rapportPolitique', 'RapportPolitiqueController@index')->name('RP');
+Route::get('/rapportPresidentiel', 'RapportPolitiqueController@presidentiel')->name('RPP');
+Route::get('/rapportlegislatif', 'RapportPolitiqueController@legislatif')->name('RPL');
 Route::get('/rapportPolitique', 'RapportPolitiqueController@data')->name('RP');
 
 Route::get('/rapportMunicipal', 'RapportMunicipalController@index')->name('RM');
 
-Auth::routes();
+Route::resource('carteIntelligente', 'LogementModeOccupationController');
+Route::resource('representativite', 'RepMunicipaliteController');
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/findMunicipalite','MunicipaliteController@findMunicipalite');
+Route::get('/findMun','repMunicipaliteController@findMunicipalite');
+Route::get('/findSecteur','SecteurController@findSecteur');
+Route::get('/findRep','repMunicipaliteController@findRep');
